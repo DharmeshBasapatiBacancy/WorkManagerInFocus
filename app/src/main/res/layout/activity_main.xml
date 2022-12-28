@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/sampleImageView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_230sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/android_cupcake"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/selectBlurAmountLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Select Blur Amount"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sampleImageView" />
+
+        <RadioGroup
+            android:id="@+id/blurAmountRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/selectBlurAmountLabel">
+
+            <RadioButton
+                android:id="@+id/level1RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A little blurred" />
+
+            <RadioButton
+                android:id="@+id/level2RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="More blurred" />
+
+            <RadioButton
+                android:id="@+id/level3RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The most blurred" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/progressLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/blurAmountRadioGroup">
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel Work" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:indeterminate="true" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/goButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="GO"
+            app:layout_constraintEnd_toStartOf="@id/seeFileButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progressLayout" />
+
+        <Button
+            android:id="@+id/seeFileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="SEE FILE"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/goButton"
+            app:layout_constraintTop_toBottomOf="@id/blurAmountRadioGroup" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
